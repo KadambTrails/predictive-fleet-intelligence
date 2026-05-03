@@ -1,0 +1,9 @@
+ai_logistics_transform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'logistics.duckdb'  
+      extensions:
+        - parquet
+      schema: main
