@@ -1,0 +1,19 @@
+ai_logistics_transform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'logistics.duckdb'  
+      extensions:
+        - parquet
+      schema: main
+    
+    gold_layer:
+      type: clickhouse
+      host: 172.27.6.38
+      port: 8123
+      user: default
+      password: "password"
+      schema: truck_logistics_gold
+      secure: False
+      verify: False

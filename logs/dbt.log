@@ -1,0 +1,297 @@
+[0m12:37:49.825602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002366AC00440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002366A61B890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002366D2F74D0>]}
+
+
+============================== 12:37:49.839842 | d1d774c5-001e-4081-81b4-48cc23063321 ==============================
+[0m12:37:49.839842 [info ] [MainThread]: Running with dbt=1.8.2
+[0m12:37:49.841366 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\archit_sharma\\.dbt', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt init ai_logistics_transform', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:37:49.888479 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'WindowsPath'.. Dictionary: {'dir': WindowsPath('C:/Users/archit_sharma/.dbt')}
+[0m12:37:49.889629 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m12:37:49.895961 [debug] [MainThread]: Starter project path: C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\include\starter_project
+[0m12:37:49.969934 [info ] [MainThread]: 
+Your new dbt project "ai_logistics_transform" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:37:49.971658 [info ] [MainThread]: Setting up your profile.
+[0m12:38:01.358030 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:38:01.358986 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:38:01.359590 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:41:02.450858 [error] [MainThread]: Encountered an error:
+
+[0m12:41:02.461607 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\cli\main.py", line 470, in init
+    results = task.run()
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\init.py", line 347, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\init.py", line 180, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\init.py", line 164, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\init.py", line 117, in generate_target_from_input
+    target = self.generate_target_from_input(
+        profile_template_local[key][choice], target
+    )
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\init.py", line 130, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\click\termui.py", line 179, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\click\termui.py", line 162, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:41:02.466410 [debug] [MainThread]: Command `dbt init` failed at 12:41:02.465870 after 193.19 seconds
+[0m12:41:02.467898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002366D6FA190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002366D988A70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002366D910490>]}
+[0m12:41:02.469819 [debug] [MainThread]: Flushing usage events
+[0m12:41:14.958337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B7350440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B6D6B890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B9A474D0>]}
+
+
+============================== 12:41:14.967859 | 45eacf36-bb85-4660-949e-f9cfaa333768 ==============================
+[0m12:41:14.967859 [info ] [MainThread]: Running with dbt=1.8.2
+[0m12:41:14.969926 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\archit_sharma\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init ai_logistics_transform', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:41:15.029542 [info ] [MainThread]: A project called ai_logistics_transform already exists here.
+[0m12:41:15.033313 [debug] [MainThread]: Command `dbt init` succeeded at 12:41:15.032944 after 0.71 seconds
+[0m12:41:15.034242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B9C51350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B9D003B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B9A92F10>]}
+[0m12:41:15.035097 [debug] [MainThread]: Flushing usage events
+[0m12:49:02.965869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E349364440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E348D7B890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34BA674D0>]}
+
+
+============================== 12:49:02.980987 | 7661c5f1-ff89-48ea-b0f6-d3b23653ee9b ==============================
+[0m12:49:02.980987 [info ] [MainThread]: Running with dbt=1.8.2
+[0m12:49:02.982826 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug --profiles-dir .', 'send_anonymous_usage_stats': 'True'}
+[0m12:49:03.056415 [info ] [MainThread]: dbt version: 1.8.2
+[0m12:49:03.057502 [info ] [MainThread]: python version: 3.13.1
+[0m12:49:03.059025 [info ] [MainThread]: python path: C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Scripts\python.exe
+[0m12:49:03.060339 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m12:49:03.061748 [info ] [MainThread]: Using profiles dir at .
+[0m12:49:03.062833 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m12:49:03.064237 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+[0m12:49:03.066331 [info ] [MainThread]: Configuration:
+[0m12:49:03.067509 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m12:49:03.068389 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m12:49:03.069351 [info ] [MainThread]: Required dependencies:
+[0m12:49:03.070371 [debug] [MainThread]: Executing "git --help"
+[0m12:49:03.360548 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:49:03.361866 [debug] [MainThread]: STDERR: "b''"
+[0m12:49:03.363058 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:49:03.363871 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m12:49:03.364726 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m12:49:03.365536 [info ] [MainThread]: dbt looked for a profiles.yml file in .\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m12:49:03.366292 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml> not found
+
+[0m12:49:03.368319 [debug] [MainThread]: Command `dbt debug` failed at 12:49:03.368026 after 0.81 seconds
+[0m12:49:03.369063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34BC715B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34BCD8290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34BCF1AE0>]}
+[0m12:49:03.369808 [debug] [MainThread]: Flushing usage events
+[0m03:48:36.532613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7F4674440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7F408B890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7F6D674D0>]}
+
+
+============================== 03:48:36.536726 | 41e7fd50-6166-44d3-80f6-d4ab61113f3b ==============================
+[0m03:48:36.536726 [info ] [MainThread]: Running with dbt=1.8.2
+[0m03:48:36.537571 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m03:48:36.537980 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:48:36.539060 [debug] [MainThread]: Command `dbt run` failed at 03:48:36.538958 after 0.18 seconds
+[0m03:48:36.539354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7F6F79480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7F6FD83B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7F6DB7460>]}
+[0m03:48:36.539635 [debug] [MainThread]: Flushing usage events
+[0m13:27:48.306481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018CCFEA46E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018CCC82AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018CD0DA7D90>]}
+[0m13:27:48.324641 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 13:27:48.326153 | 6dd68fe0-9ec4-4b37-a6ce-dfdc02abc912 ==============================
+[0m13:27:48.326153 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:27:48.328144 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --target gold_layer --profiles-dir .', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:27:48.439301 [info ] [MainThread]: dbt version: 1.11.8
+[0m13:27:48.441204 [info ] [MainThread]: python version: 3.13.1
+[0m13:27:48.442802 [info ] [MainThread]: python path: C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Scripts\python.exe
+[0m13:27:48.443784 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m13:27:48.446174 [info ] [MainThread]: Using profiles dir at .
+[0m13:27:48.447902 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m13:27:48.451804 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+[0m13:27:48.456465 [info ] [MainThread]: Configuration:
+[0m13:27:48.470938 [error] [MainThread]: Encountered an error:
+
+[0m13:27:48.492002 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\cli\main.py", line 425, in debug
+    results = task.run()
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\debug.py", line 140, in run
+    self.test_configuration(load_profile_status.log_msg, load_project_status.log_msg)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt\task\debug.py", line 415, in test_configuration
+    fire_event(DebugCmdOut(msg=f"  profiles.yml file [{profile_status_msg}]"))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt_common\events\functions.py", line 142, in fire_event
+    get_event_manager().fire_event(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, level=level, node=node, force_warn_or_error_handling=force_warn_or_error_handling
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt_common\events\event_manager.py", line 99, in fire_event
+    logger.write_line(msg)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt_common\events\logger.py", line 128, in write_line
+    line = self.create_line(msg)
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt_common\events\logger.py", line 152, in create_line
+    return self.create_debug_line(msg) if self.use_debug_format else self.create_info_line(msg)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt_common\events\logger.py", line 170, in create_debug_line
+    scrubbed_msg: str = self.scrubber(msg.info.msg)  # type: ignore
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Lib\site-packages\dbt_common\events\functions.py", line 68, in env_scrubber
+    def env_scrubber(msg: str) -> str:
+    
+KeyboardInterrupt
+
+[0m13:27:48.499270 [debug] [MainThread]: Command `dbt debug` failed at 13:27:48.498644 after 0.70 seconds
+[0m13:27:48.501614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018CD0DF63F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018CD0DF6520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018CD0E503B0>]}
+[0m13:27:48.503734 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m13:27:48.505156 [debug] [MainThread]: Flushing usage events
+[0m13:28:02.601596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208567646E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208530DAFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020857667D90>]}
+[0m13:28:02.616632 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 13:28:02.618406 | e65adb91-f880-4465-b895-d588565e225f ==============================
+[0m13:28:02.618406 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:28:02.620279 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'invocation_command': 'dbt debug --target gold_layer --profiles-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:28:02.690121 [info ] [MainThread]: dbt version: 1.11.8
+[0m13:28:02.691646 [info ] [MainThread]: python version: 3.13.1
+[0m13:28:02.693252 [info ] [MainThread]: python path: C:\Users\archit_sharma\Documents\projack\truck logistics\logistics_env\Scripts\python.exe
+[0m13:28:02.694537 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m13:28:02.695897 [info ] [MainThread]: Using profiles dir at .
+[0m13:28:02.697601 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m13:28:02.698806 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+[0m13:28:02.700293 [info ] [MainThread]: Configuration:
+[0m13:28:02.702892 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m13:28:02.706457 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:28:02.709290 [info ] [MainThread]: Required dependencies:
+[0m13:28:02.711879 [debug] [MainThread]: Executing "git --help"
+[0m13:28:03.025012 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:28:03.026361 [debug] [MainThread]: STDERR: "b''"
+[0m13:28:03.027467 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:28:03.028600 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m13:28:03.029834 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m13:28:03.030838 [info ] [MainThread]: dbt looked for a profiles.yml file in .\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m13:28:03.031922 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml> not found
+
+[0m13:28:03.034463 [debug] [MainThread]: Command `dbt debug` failed at 13:28:03.034176 after 0.85 seconds
+[0m13:28:03.035288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208576B1CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208576B22C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020857708170>]}
+[0m13:28:03.035914 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m13:28:03.036803 [debug] [MainThread]: Flushing usage events
+[0m13:48:37.052094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172C80946E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172C4A1AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172C8F97ED0>]}
+[0m13:48:37.073455 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 13:48:37.075140 | 0c7087dd-9e9d-4e32-bc18-29937e5bb2dc ==============================
+[0m13:48:37.075140 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:48:37.076853 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\archit_sharma\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:48:37.078024 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:48:37.081033 [debug] [MainThread]: Command `dbt run` failed at 13:48:37.080708 after 0.66 seconds
+[0m13:48:37.081981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172C9031CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172C9031E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172CA05C050>]}
+[0m13:48:37.082747 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m13:48:37.083452 [debug] [MainThread]: Flushing usage events
+[0m21:42:35.973106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024526F646E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000245238DAFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024527E67ED0>]}
+[0m21:42:35.985176 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 21:42:35.986217 | a7449720-475c-4166-8367-eca63ddd0c38 ==============================
+[0m21:42:35.986217 [info ] [MainThread]: Running with dbt=1.11.8
+[0m21:42:35.988169 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt show --select silver_truck_data --limit 5 --profiles-dir .', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m21:42:35.989649 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:42:35.992549 [debug] [MainThread]: Command `dbt show` failed at 21:42:35.992280 after 0.65 seconds
+[0m21:42:35.993316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024527F01CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024527F01E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024528F30050>]}
+[0m21:42:35.994178 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m21:42:35.994779 [debug] [MainThread]: Flushing usage events
+[0m21:45:11.311206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016A866946E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016A8300AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016A87597ED0>]}
+[0m21:45:11.321788 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 21:45:11.322824 | d6f8035f-8ee3-433a-bf9b-713c6cf1f5a2 ==============================
+[0m21:45:11.322824 [info ] [MainThread]: Running with dbt=1.11.8
+[0m21:45:11.324447 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt show --select silver_truck_data --limit 5 --profiles-dir .', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m21:45:11.326086 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:45:11.329789 [debug] [MainThread]: Command `dbt show` failed at 21:45:11.329363 after 0.76 seconds
+[0m21:45:11.330767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016A87631CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016A87631E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016A88664050>]}
+[0m21:45:11.331434 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m21:45:11.331880 [debug] [MainThread]: Flushing usage events
+{"data":{"log_version":3,"version":"=2.0.0-preview.175"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"019e0d90-3b0a-7282-9715-b2b731bc2394","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.175","name":"MainReportVersion","pid":8616,"thread":"tokio-rt-worker","ts":"2026-05-09T16:26:56.666149Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\archit_sharma\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"019e0d90-3b0a-7282-9715-b2b731bc2394","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false}","name":"MainReportArgs","pid":8616,"thread":"tokio-rt-worker","ts":"2026-05-09T16:26:56.666272Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"019e0d90-3b0a-7282-9715-b2b731bc2394","level":"debug","msg":"No active cloud project configured, skipping remote license","name":"Generic","pid":8616,"thread":"tokio-rt-worker","ts":"2026-05-09T16:26:56.695872Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"019e0d90-3b0a-7282-9715-b2b731bc2394","level":"info","msg":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","name":"ShowNode","pid":8616,"thread":"tokio-rt-worker","ts":"2026-05-09T16:26:56.698465Z"}}
+{"data":{"completed_at":"2026-05-09T16:26:58.093520Z","elapsed":1.4305658340454102,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"019e0d90-3b0a-7282-9715-b2b731bc2394","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [1.4s]","name":"CommandCompleted","pid":8616,"thread":"tokio-rt-worker","ts":"2026-05-09T16:26:58.094113Z"}}
+[0m03:35:54.817105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EE91E46E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EE5B6AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EEA0E7ED0>]}
+[0m03:35:54.829740 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 03:35:54.830700 | c2ee32c1-338c-4940-b54a-72a0ff4ef1c8 ==============================
+[0m03:35:54.830700 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:35:54.832449 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\archit_sharma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select silver_truck_data', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m03:35:54.833641 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\archit_sharma\Documents\projack\truck logistics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:35:54.838268 [debug] [MainThread]: Command `dbt run` failed at 03:35:54.837683 after 0.50 seconds
+[0m03:35:54.839772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EEA181CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EEA181E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EEB1AC050>]}
+[0m03:35:54.840780 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m03:35:54.841763 [debug] [MainThread]: Flushing usage events

@@ -1,12 +1,13 @@
+{{ config(materialized='table') }}
 
 WITH raw_data AS (
     SELECT * FROM read_parquet('../data/raw_audit_table/*.parquet')
 )
 
 SELECT
-    -- Metadata from the Bronze Layer
+    -- Metadata
     log_id,
-    CAST(raw_json_payload->>'$.timestamp' AS datetime) as event_timestamp,
+    (raw_json_payload->>'$.timestamp')::TIMESTAMP as event_timestamp,
     ingested_at,
 
     -- Core Logistics Fields
@@ -16,13 +17,11 @@ SELECT
     raw_json_payload->>'$.source_city' as source_city,
     raw_json_payload->>'$.dest_city' as dest_city,
 
-    -- Telemetry Metrics (Cast to proper Numeric types)
+    -- Telemetry Metrics
     CAST(raw_json_payload->>'$.engine_temp' AS DOUBLE) as engine_temp,
     CAST(raw_json_payload->>'$.average_speed' AS DOUBLE) as avg_speed_mph,
-    
-    -- Convert 0.77 to 77.0 for easier reading
     CAST(raw_json_payload->>'$.fuel_remaining_percent' AS DOUBLE) * 100 as fuel_percent,
-    
+
     -- Environmental & Load Data
     raw_json_payload->>'$.weather_condition' as weather,
     CAST(raw_json_payload->>'$.cargo_weight_kg' AS INTEGER) as cargo_weight_kg,
@@ -36,8 +35,10 @@ SELECT
     END as thermal_status,
 
     CASE 
-        WHEN raw_json_payload->>'$.weather_condition' IN ('hailstorm', 'snow', 'heavy rain') THEN TRUE
-        ELSE FALSE
-    END as hazardous_driving_flag
+        WHEN raw_json_payload->>'$.weather_condition' IN ('hailstorm', 'snow', 'heavy rain') THEN 1
+        ELSE 0
+    END as hazardous_driving_flag,
 
+    (CAST(raw_json_payload->>'$.cargo_weight_kg' AS DOUBLE) * CAST(raw_json_payload->>'$.engine_temp' AS DOUBLE)) / 1000 as engine_stress_index
+   
 FROM raw_data
