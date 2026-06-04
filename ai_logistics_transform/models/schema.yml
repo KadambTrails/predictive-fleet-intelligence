@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: silver_truck_data
+    description: "Cleaned, casted, and verified logistics event vectors sourced from Spark Parquet streams."
+    columns:
+      - name: truck_id
+        description: "The unique alphanumeric identifier for the fleet asset."
+        data_tests:
+          - not_null
+
+      - name: event_timestamp
+        description: "The native epoch timestamp when the message was emitted by the truck telemetry system."
+        data_tests:
+          - not_null
+
+      - name: engine_temp
+        description: "Core operating temperature. Must lie within valid thermal operating thresholds."
+        data_tests:
+          - not_null
+
+      - name: fuel_percent
+        description: "Calculated remaining fuel capacity percentage scaled to whole numbers."
+        data_tests:
+          - not_null
+
+      - name: hazardous_driving_flag
+        description: "Binary alert flag representing dangerous environmental driving constraints."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
